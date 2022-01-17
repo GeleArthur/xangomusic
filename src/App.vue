@@ -1,30 +1,29 @@
 <template>
-  <div id="app">
-    <TopNavBar/>
-    <HelloWorld/>
-  </div>
+  <topBar />
 </template>
 
-<script>
-import HelloWorld from './components/HelloWorld.vue'
-import TopNavBar from './components/TopNavBar.vue'
+<script lang="ts">
+import { defineComponent } from 'vue';
+import topBar from "./components/TopBar.vue"
 
-export default {
+export default defineComponent({
   name: 'App',
   components: {
-    HelloWorld,
-    TopNavBar
+    topBar
   }
-}
+});
 </script>
 
 <style>
+body{
+  margin: 0px;
+  padding: 0px;
+  background-color: #F2DBAF;
+}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 </style>
