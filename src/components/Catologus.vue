@@ -1,15 +1,19 @@
 <template>
   <div class="concontainertainer">
     <div class="catalogus-container">
-      <album :v-for="index in 10" ></album>
+      <album />
     </div>
   </div>
 </template>
 
 <script>
-import album from './Album.vue';
+import Album from "./Album.vue";
 export default {
-  components: { album },};
+  components: { Album },
+  data(){
+    
+  }
+};
 </script>
 
 <style scoped lang="scss">
