@@ -1,37 +1,34 @@
 <template>
- <div class="catalogus-container">
-  <div class="grid-item"><img src=""></div>
-  <div class="grid-item">2</div>
-  <div class="grid-item">3</div>
-  <div class="grid-item">4</div>
-  <div class="grid-item">5</div>
-  <div class="grid-item">1</div>
-  <div class="grid-item">2</div>
-  <div class="grid-item">3</div>
-  <div class="grid-item">4</div>
-  <div class="grid-item">5</div>
- </div>
+  <div class="concontainertainer">
+    <div class="catalogus-container">
+      <album :v-for="index in 10" ></album>
+    </div>
+  </div>
 </template>
 
 <script>
+import album from './Album.vue';
 export default {
-
-}
+  components: { album },};
 </script>
 
-<style>
+<style scoped lang="scss">
 .catalogus-container {
   display: grid;
-  grid-template-columns: auto auto auto auto auto;
-  grid-template-rows: auto;
-  grid-gap: 10px;
-  padding: 10px;
-  margin-left: 5%;
-  margin-right: 5%;
+  grid-auto-rows: 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  gap: 10px 10px;
+  justify-items: center;
+  justify-content: center;
+  width: auto;
+  height: auto;
 }
-.catalogus-container > div {
+.grid-item {
   background-color: white;
-  text-align: center;
-  font-size: 30px;
+  padding: 10px;
+
+  img {
+    margin: 10px;
+  }
 }
 </style>

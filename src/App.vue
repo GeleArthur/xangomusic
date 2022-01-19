@@ -6,6 +6,7 @@
     <facebook-feed />
   </div> -->
 <catologus />
+<worldMap />
   
 </template>
 
@@ -14,6 +15,9 @@ import { defineComponent } from "vue";
 import Catologus from "./components/Catologus.vue";
 import FacebookFeed from "./components/FacebookFeed.vue";
 import topBar from "./components/TopBar.vue";
+import worldMap from './components/WorldMap.vue';
+;
+
 
 export default defineComponent({
   name: "App",
@@ -21,6 +25,7 @@ export default defineComponent({
     topBar,
     FacebookFeed,
     Catologus,
+    worldMap
   },
 });
 </script>
