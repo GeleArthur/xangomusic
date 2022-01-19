@@ -1,16 +1,20 @@
 <template>
   <div class="container">
     <div class="contents">
-      <div class="search">SEARCH BAR</div>
+      <div class="search">
+        <input type="text" placeholder="Search...">
+      </div>
       <div class="topBar">
-          <div>do</div>
-          <div>do</div>
-          <div>do</div>
-          <div>do</div>
-          <div>do</div>
-          </div>
+        <a href="News">News</a>
+        <a href="Releases">New Release</a>
+        <a href="Order">How to Order</a>
+        <a href="Distribution">Distribution</a>
+        <a href="Contact">Contact</a>
+      </div>
     </div>
-    <img class="icon" src="xango logo 2012.png" alt="xango logo">
+    <div class="icon">
+      <a href="Home"><img src="headerlogo.png" alt="xango logo" /></a>
+    </div>
   </div>
 </template>
 
@@ -44,12 +48,33 @@ export default {};
   grid-template-columns: auto auto auto auto auto;
   grid-area: topBar;
 }
+.search input[type=text] {
+  width: 50%;
+  float: left;
+  padding: 10px;
+  border: white solid 10px;
+  border-radius: 30px;
+  margin-top: 10px;
+  margin-left: 5%;
+  font-size: 17px;
+}
 .icon {
   grid-area: icon;
-  background-color: white;
-  display: block;
-  height: 100%;
-  // width: 100%;
-  // padding: 10%;
+  height: inherit;
+
+  img {
+    text-align: center;
+    height: 100%;
+    object-fit: contain;
+  }
+}
+
+.topBar {
+  a{
+    color: white;
+    font-weight: 900;
+    text-align: center;
+    text-decoration: none;
+  }
 }
 </style>
