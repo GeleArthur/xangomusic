@@ -4,39 +4,43 @@
   </div>
 </template>
 
-<script lang="ts">
+<script lang="js">
 import mapData from "@/assets/WorldMap.json";
 import * as d3 from "d3";
-import * as topojson from 'topojson';
-import Topology from 'topojson'
-
+import * as topojson from "topojson";
+import Topology from "topojson";
 
 export default {
   mounted() {
-    // let canvas = document.getElementById("worldmap") as HTMLCanvasElement;
-    // let ctx = canvas.getContext("2d") as CanvasRenderingContext2D;
+    const width = 900;
+    const height = 600;
 
-    // ctx.fillStyle = "white"
-    // ctx.fillRect(0,0,600,400);
-
-    var path = d3.geoPath().projection(null);
-    var svg = d3
-      .select(".worldmap")
+    const svg = d3
+      .select("body")
       .append("svg")
-      .attr("width", 600)
-      .attr("height", 400);
+      .attr("width", width)
+      .attr("height", height);
 
-    // let data = mapData as Topology;
+    const projection = d3
+      .geoMercator()
+      .scale(140)
+      .translate([width / 2, height / 1.4]);
+    const path = d3.geoPath(projection);
 
-    // topojson.feature(mapData, mapData.objects.countries).geometry
+    const g = svg.append("g");
 
-    // d3.json("en.wikipedia.org/w/index.php?title=Template:Graph:Map&action=raw").then((e)=>{
-    //   console.log(e)
-    //   // svg
-    //   // .append("g")
-    //   // .selectAll("path")
-    //   // // .data(topojson.feature(e, e.objects.states).features)
-    // })
+    d3.json(
+      "https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json"
+    ).then((data) => {
+      console.log(data)
+      const countries = topojson.feature(data, data.objects.countries);
+      g.selectAll("path")
+        .data(countries.features)
+        .enter()
+        .append("path")
+        .attr("class", "country")
+        .attr("d", path);
+    });
   },
 };
 </script>

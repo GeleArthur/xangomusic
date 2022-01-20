@@ -1,7 +1,7 @@
 <template>
   <div class="concontainertainer">
     <div class="catalogus-container">
-      <album />
+      <album  />
     </div>
   </div>
 </template>
@@ -10,9 +10,10 @@
 import Album from "./Album.vue";
 export default {
   components: { Album },
-  data(){
-    
-  }
+  data() {
+    return {
+    };
+  },
 };
 </script>
 
