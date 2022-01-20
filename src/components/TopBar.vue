@@ -5,15 +5,15 @@
         <input type="text" placeholder="Search...">
       </div>
       <div class="topBar">
-        <a href="News">News</a>
-        <a href="Releases">New Release</a>
-        <a href="Order">How to Order</a>
-        <a href="Distribution">Distribution</a>
-        <a href="Contact">Contact</a>
+        <router-link to="/News">News</router-link>
+        <router-link to="/Releases">New Release</router-link>
+        <router-link to="/Order">How to Order</router-link>
+        <router-link to="/Distribution">Distribution</router-link>
+        <router-link to="/Contact">Contact</router-link>
       </div>
     </div>
     <div class="icon">
-      <a href="Home"><img src="headerlogo.png" alt="xango logo" /></a>
+      <router-link to="/"><img src="headerlogo.png" alt="xango logo" /></router-link>
     </div>
   </div>
 </template>
