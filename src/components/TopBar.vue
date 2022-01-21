@@ -2,7 +2,7 @@
   <div class="container">
     <div class="contents">
       <div class="search">
-        <input type="text" placeholder="Search...">
+        <input type="text" placeholder="Search..." />
       </div>
       <div class="topBar">
         <router-link to="/News">News</router-link>
@@ -13,7 +13,9 @@
       </div>
     </div>
     <div class="icon">
-      <router-link to="/"><img src="headerlogo.png" alt="xango logo" /></router-link>
+      <router-link to="/"
+        ><img src="headerlogo.png" alt="xango logo"
+      /></router-link>
     </div>
   </div>
 </template>
@@ -48,7 +50,7 @@ export default {};
   grid-template-columns: auto auto auto auto auto;
   grid-area: topBar;
 }
-.search input[type=text] {
+.search input[type="text"] {
   width: 50%;
   float: left;
   padding: 10px;
@@ -70,11 +72,15 @@ export default {};
 }
 
 .topBar {
-  a{
+  a {
     color: white;
     font-weight: 900;
     text-align: center;
     text-decoration: none;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    margin: 10px;
   }
 }
 </style>

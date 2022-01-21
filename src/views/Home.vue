@@ -24,7 +24,13 @@ export default {
   grid-template-columns: 1fr min-content;
   grid-template-rows: 1fr;
   gap: 10px;
-  /* justify-content: space-between; */
-  /* justify-items: end; */
+}
+
+@media screen and (max-width: 800px) {
+  .container {
+    grid-template-columns: 1fr;
+    grid-template-rows: min-content 1fr;
+    justify-items: center;
+  }
 }
 </style>
