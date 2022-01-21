@@ -24,12 +24,6 @@
 
 <script>
 export default {
-  mounted() {
-    document.getElementById("search").addEventListener("submit", () => {
-      
-    });
-  },
-
   methods: {
     nothing() {
       this.$router.push("/Music/" + document.getElementById("search").value);
