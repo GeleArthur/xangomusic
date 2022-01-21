@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
 import Home from '../views/Home.vue'
 import Order from '../views/Order.vue'
+import Music from '../views/Music.vue'
 
 
 const routes: Array<RouteRecordRaw> = [
@@ -13,6 +14,11 @@ const routes: Array<RouteRecordRaw> = [
     path: '/Order',
     name: 'Order',
     component: Order
+  },
+  {
+    path:'/Music/:land',
+    name:'Music',
+    component: Music
   }
 ]
 

@@ -7,11 +7,12 @@
   </div>
 </template>
 
-<script lang="js">
+<script lang="ts">
 import mapData from "@/assets/WorldMap.json";
 import * as d3 from "d3";
 import * as topojson from "topojson";
 import Topology from "topojson";
+import router from '@/router';
 
 export default {
   mounted() {
@@ -35,6 +36,7 @@ export default {
         .attr("class", "country")
         .attr("d", path)
         .on("click", (e) => {
+          this.$router.push("/Music/"+e.target.__data__.properties.name)
           console.log(e.target.__data__.properties.name);
         });
     });
@@ -58,9 +60,6 @@ export default {
   /* width: auto; */
   /* height: inherit; */
   max-height: inherit;
-  svg{
-    // max-height: 650px;
-  }
 }
 
 .contrainer {

@@ -14,7 +14,7 @@
     </div>
     <div class="icon">
       <router-link to="/"
-        ><img src="headerlogo.png" alt="xango logo"
+        ><img src="/headerlogo.png" alt="xango logo"
       /></router-link>
     </div>
   </div>
