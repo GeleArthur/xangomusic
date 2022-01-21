@@ -30,7 +30,7 @@ export default {
           title: "sahdjkhja",
           country: country,
           artist: "Arthur and Ruben",
-          image: "https://picsum.photos/200",
+          image: "https://picsum.photos/200?random="+Math.random(),
         });
       }
     },
