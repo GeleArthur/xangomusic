@@ -7,7 +7,7 @@
   </div>
 </template>
 
-<script lang="ts">
+<script lang="js">
 import mapData from "@/assets/WorldMap.json";
 import * as d3 from "d3";
 import * as topojson from "topojson";
@@ -73,6 +73,6 @@ h1 {
   margin: 0px;
   text-align: center;
   font-weight: 900;
-  color: #b22827;
+  color: #A82E2C;
 }
 </style>

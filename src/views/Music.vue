@@ -1,7 +1,7 @@
 <template>
-  <dir class="albumsContainer">
+  <div class="albumsContainer">
     <album v-for="(item, index) in albums" :key="index" :data="item" />
-  </dir>
+  </div>
 </template>
 
 <script>

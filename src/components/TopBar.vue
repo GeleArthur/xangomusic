@@ -2,7 +2,9 @@
   <div class="container">
     <div class="contents">
       <div class="search">
-        <input type="text" placeholder="Search..." />
+        <form v-on:submit.prevent="nothing">
+          <input type="text" placeholder="Search..." id="search" />
+        </form>
       </div>
       <div class="topBar">
         <router-link to="/News">News</router-link>
@@ -13,22 +15,34 @@
       </div>
     </div>
     <div class="icon">
-      <router-link to="/"
-        ><img src="/headerlogo.png" alt="xango logo"
-      /></router-link>
+      <router-link to="/">
+        <img src="/headerlogo.png" alt="xango logo" />
+      </router-link>
     </div>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  mounted() {
+    document.getElementById("search").addEventListener("submit", () => {
+      
+    });
+  },
+
+  methods: {
+    nothing() {
+      this.$router.push("/Music/" + document.getElementById("search").value);
+    },
+  },
+};
 </script>
 
 <style scoped lang="scss">
 .container {
   width: 100%;
   height: 9rem;
-  background-color: #b22827;
+  background-color: #a82e2c;
 
   display: grid;
   grid-template-columns: min-content 1fr;
@@ -77,6 +91,7 @@ export default {};
     font-weight: 900;
     text-align: center;
     text-decoration: none;
+
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
