@@ -1,5 +1,10 @@
 <template>
-<svg class="worldmap"></svg>
+  <div class="contrainer">
+    <h1 class="Title">World Map</h1>
+    <div class="mapcontainer">
+      <svg class="worldmap" ></svg>
+    </div>
+  </div>
 </template>
 
 <script lang="js">
@@ -10,41 +15,65 @@ import Topology from "topojson";
 
 export default {
   mounted() {
-    const width = 900;
-    const height = 600;
-
     const svg = d3
       .select(".worldmap")
-      .attr("width", width)
-      .attr("height", height);
+      .attr("viewBox", "30,-100,900,500")
+      .attr("width", "100%")
+      .attr("height", "100%");
 
-    const projection = d3
-      .geoMercator()
-      .scale(140)
-      .translate([width / 2, height / 1.4]);
-    
-    const path = d3.geoPath(projection);
-
-    const g = svg.append("g");
+    const path = d3.geoPath(d3.geoMercator().scale(120));
 
     d3.json(
       "https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json"
     ).then((data) => {
       const countries = topojson.feature(data, data.objects.countries);
-      g.selectAll("path")
+      svg
+        .selectAll("path")
         .data(countries.features)
         .enter()
         .append("path")
         .attr("class", "country")
-        .attr("d", path);
+        .attr("d", path)
+        .on("click", (e) => {
+          console.log(e.target.__data__.properties.name);
+        });
     });
   },
 };
 </script>
 
 <style>
-.country:hover{
+.country:hover {
   fill: red;
 }
 
+.country {
+  fill: gray;
+  stroke: black;
+}
+</style>
+
+<style scoped lang="scss">
+.mapcontainer {
+  /* width: auto; */
+  /* height: inherit; */
+  max-height: inherit;
+  svg{
+    // max-height: 650px;
+  }
+}
+
+.contrainer {
+  /* width: 100%; */
+  height: min-content;
+  // max-height: 700px;
+  background-color: white;
+  margin: 10px;
+}
+h1 {
+  margin: 0px;
+  text-align: center;
+  font-weight: 900;
+  color: #b22827;
+}
 </style>

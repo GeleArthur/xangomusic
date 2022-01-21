@@ -1,22 +1,16 @@
 <template>
   <topBar />
-  <router-view/>
+  <router-view />
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import Catologus from "./components/Catologus.vue";
-import FacebookFeed from "./components/FacebookFeed.vue";
 import topBar from "./components/TopBar.vue";
-import worldMap from './components/WorldMap.vue';
 
 export default defineComponent({
   name: "App",
   components: {
     topBar,
-    FacebookFeed,
-    Catologus,
-    worldMap
   },
 });
 </script>
